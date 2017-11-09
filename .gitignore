@@ -1,0 +1,6 @@
+/.vscode/
+*.iml
+/.idea/*
+.DS_Store
+#/android/
+/node_modules/

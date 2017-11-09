@@ -1,0 +1,7 @@
+app.iml
+/build
+/.externalNativeBuild
+/src/main/res-reactnative
+/src/main/assets/index.android.bundle
+/src/main/assets/index.android.bundle.meta
+/output_apk

@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    defaultConfig {
+        applicationId "com.echoesnet.crowdfunding"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions"
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86"
+        }
+    }
+
+    sourceSets {
+        main {
+            //jni.srcDirs = []
+            //把java-gen文件夹下的java文件也归入srcDir中
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+//            jniLibs.srcDirs = ['libs']
+
+            //*注意：这几个 res-* 文件夹是特殊的，额外配置的，用来分类资源。
+            // names can't repeat in those groups;
+            res.srcDirs = [
+                    'src/main/res-res-reactnative',
+                    'src/main/res'
+            ]
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+
+    implementation "com.facebook.react:react-native:+" // From node_modules.
+}
