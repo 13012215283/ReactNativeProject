@@ -18,19 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //初始页面
         self.window    = UIWindow(frame: UIScreen.main.bounds)
         
-        //创建主视图框架
-        let mainViewController = MainViewController()
+//        //创建主视图框架
+//        let mainViewController = MainViewController()
+//
+//        //创建tabBar视图
+//        let tabBarController   = ContentTabBarController()
+//
+//        //设置主视图
+//        mainViewController.setMenuViewController(LeftMemuViewController(), withDerectionType: DirectionType.MainMenuDirectionLeft)
+//        mainViewController.setMenuViewController(RightMenuViewController(), withDerectionType: DirectionType.MainMenuDirectionRight)
+//        mainViewController.setContenViewController(tabBarController)
         
-        //创建tabBar视图
-        let tabBarController   = ContentTabBarController()
-        
-        //设置主视图
-        mainViewController.setMenuViewController(LeftMemuViewController(), withDerectionType: DirectionType.MainMenuDirectionLeft)
-        mainViewController.setMenuViewController(RightMenuViewController(), withDerectionType: DirectionType.MainMenuDirectionRight)
-        mainViewController.setContenViewController(tabBarController)
+         let vc = UINavigationController(rootViewController: ReactViewController(bundleURL: CZ_bundleURL, moduleName: CZ_moduleName, properties: nil, launchOptions: nil))
         
         //给window添加根视图
-        self.window?.rootViewController = mainViewController;
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
 
         return true
