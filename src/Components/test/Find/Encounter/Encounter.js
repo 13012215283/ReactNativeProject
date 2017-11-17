@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-    AppRegistry,
     StyleSheet,
     FlatList,
     Text,
@@ -10,16 +9,7 @@ import {
 } from "react-native"
 import { EncounterItem, obj } from "./EncounterItem"
 import { request } from "../../../../utils/request";
-
-const userInfo = {
-    deviceId: '0d4a40ac21168e93a15586b6769270892ef086c7',
-    token: 'bb44051c21ce4995a17ba98afeeab31c',
-    uId: '03a8b383-e641-487e-89a3-2e689df0ef96',
-    abc: 'comecho519',
-    longitude: "+117.21085943",
-    latitude: "+39.13841926",
-    city: "天津",
-}
+import { constData } from "../const"
 
 export default class Encounter extends Component {
 
@@ -37,7 +27,7 @@ export default class Encounter extends Component {
 
     async getServerData(start, num) {
         try {
-            const { deviceId, token, uId, abc } = userInfo;
+            const { deviceId, token, uId, abc } = constData.userInfo;
             const reqBody = {
                 '02': token,
                 '05': deviceId,
@@ -108,12 +98,12 @@ const EncounterSyles = StyleSheet.create({
     },
 
     separate: {
-        height: 10 / PixelRatio.get(),
+        height: 5.0/375.0*constData.ScreenWidth,
     },
 
     listHeaderView: {
         backgroundColor: "#e6e6e6",
-        height: 20 / PixelRatio.get()
+        height: 10.0/375.0*constData.ScreenWidth
     },
 
     backgroundColorWhite: {

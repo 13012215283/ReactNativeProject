@@ -16,8 +16,6 @@ const AgeViewHeight = ItemHeight * 0.078
 const AgeViewWidth = AgeViewHeight * 2
 
 export const obj = {
-  ScreenHeight,
-  ScreenWidth,
   Interval,
   ItemHeight,
   ItemWidth,
