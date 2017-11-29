@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {StackNavigator } from 'react-navigation';
-import Encounter from '../Components/test/Find/Encounter/Encounter';
-import BigVContainer from "../Components/test/Find/BigV/BigVContainer"
-import PageScrollContainer from "../Components/test/Find/ScrollPage/PageScrollContainer"
+import Encounter from '../Components/Find/Encounter/Encounter';
+import BigVContainer from "../Components/Find/BigV/BigVContainer"
+import PageScrollContainer from "../Components/Find/ScrollPage/PageScrollContainer"
 
 const FindRootNavigation = StackNavigator({
   PageScrollContainer:{

@@ -18,7 +18,7 @@ let CZ_ScreenHeight = UIScreen.main.bounds.height
 
 //MARK - react-native bundleURL , moduleName
 //let CZ_bundleURL  = URL(string: "http://localhost:8081/index.bundle?platform=ios")
-let CZ_bundleURL  = URL(string: "http://192.168.10.41:8081/index.bundle?platform=ios")
+let CZ_bundleURL  = URL(string: "http://192.168.10.29:8081/index.bundle?platform=ios")
 let CZ_moduleName = "MyReactNativeApp"
 
 /// 是否是线上
